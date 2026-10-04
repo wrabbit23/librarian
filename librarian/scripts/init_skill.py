@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-VALID_RESOURCES = {"references", "scripts", "assets", "agents"}
+VALID_RESOURCES = {"references", "scripts", "assets", "agents", "data"}
 
 
 def validate_name(name: str) -> None:
@@ -37,7 +37,7 @@ def main() -> int:
     parser.add_argument(
         "--resources",
         default="",
-        help="comma-separated optional directories: references,scripts,assets,agents",
+        help="comma-separated optional directories: references,scripts,assets,agents,data",
     )
     args = parser.parse_args()
 
