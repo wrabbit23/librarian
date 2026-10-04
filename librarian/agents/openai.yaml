@@ -1,0 +1,13 @@
+interface:
+  display_name: Librarian
+  short_description: Find, create, and refine your personal skills
+  default_prompt: Use $librarian to organize my skills and retain useful feedback.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  allow_implicit_invocation: true
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
