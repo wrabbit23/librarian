@@ -2,7 +2,7 @@
 
 ## Local release
 
-- Version: 0.1.0
+- Version: 0.1.1
 - Upstream repository: https://github.com/wrabbit23/librarian
 - Release descriptor: https://raw.githubusercontent.com/wrabbit23/librarian/main/release.json
 - Skill directory in upstream: librarian/
@@ -28,4 +28,12 @@ Compare against the installed files before replacement. Preserve locally modifie
 
 ## Publishing a release
 
-Publish the skill payload first. Then create release.json at repository root with name, version, commit (the actual payload commit SHA), and skill_path. Increment the version in this reference for each release. The descriptor must point to an already-existing payload commit; do not invent a SHA. Keep a publication README or release notes outside the installable skill folder when useful.
+Every release must include a ChatGPT-installable ZIP; publishing source files alone is incomplete.
+
+1. Increment the version in this reference and validate the skill. Publish the complete skill payload under librarian/ first.
+2. Record the actual payload commit SHA. Package that exact payload with scripts/package_skill.py as librarian-v<version>.zip. The archive must contain one librarian/ top-level folder, including SKILL.md and all required references, scripts, metadata, and assets. Exclude caches, Git metadata, and generated archives.
+3. Verify archive integrity and compare every archived file with the published payload. Publish the ZIP outside the skill directory at downloads/librarian-v<version>.zip, and add a direct download link to the repository README.
+4. Publish release.json at repository root with name, version, commit (the actual payload commit SHA), and skill_path. Also include archive_path and archive_sha256 for the verified ZIP. The descriptor must point to an already-existing payload commit; do not invent a SHA.
+5. Fetch the published descriptor and verify the source commit, downloadable ZIP blob, checksum, and README link before reporting completion.
+
+Keep publication documentation and ZIPs outside the installable skill folder. Include the installable ZIP in every subsequent release, not just the first one.
