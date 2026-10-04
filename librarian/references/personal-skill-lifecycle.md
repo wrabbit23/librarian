@@ -3,12 +3,13 @@
 ## Resolve capability and destination
 
 - Read the environment's current skill-management instructions before making lifecycle changes. Keep platform-specific operations there rather than duplicating their commands in this portable creator.
-- In a supporting ChatGPT environment, creation can save and install a personal skill directly into the user's skill directory. A downloadable ZIP alone does not establish installation.
+- In a supporting ChatGPT environment, creation can save and install a personal skill directly into the user's skill directory. Use that managed lifecycle when available. A downloadable ZIP alone does not establish installation and should not replace the managed path unless the user requests an export or a manual fallback is actually necessary.
 - Resolve an existing skill by its frontmatter name, preserving its managed directory and identity. Distinguish personal skills from plugin-provided skills; the ability to edit local bytes does not establish ownership.
-- Prefer a local-first workflow for personal skills that evolve through use: apply requested edits to the managed working copy immediately, but do not persist/publish the accumulated changes until the user explicitly says `save`, `publish`, or otherwise clearly requests persistence. A request to edit content is not, by itself, a persistence request when this workflow is in use.
+- Prefer a local-first workflow for personal skills that evolve through use: apply requested edits to the managed working copy immediately, but do not persist/publish the accumulated changes until the user explicitly says `save`, `publish`, or otherwise clearly requests persistence. Requests such as `add`, `change`, `update`, or `remember` authorize the working-copy edit, not persistence, unless the user clearly couples them with a save/publish instruction.
 - Keep skill-owned evolving state with the skill when practical. Use an optional `data/` directory for progress logs, backlogs, inventories, and similar user/project state that should travel with the skill. Do not move that state into unrelated Library files unless the user asks for that storage model.
 - A hypothetical question about removal is not an uninstall request. Resolve which skills the user means before removing unrelated skills.
 - Uninstall disables while retaining restorable content; permanent deletion requires an explicit deletion request. Follow the platform's actual implementation of those operations.
+- Do not infer lifecycle capability from a generic skill listing alone; personal managed skills may use a different surface. Inspect and use the environment's actual personal-skill management path before falling back to manual export.
 - Check the client surface before concluding that a lifecycle action is unavailable. In October 2026, the user found permanent deletion in the browser interface after being unable to find it in Android. Treat this as observed interface variation, not a guarantee about future versions. If a mobile control is missing, suggest checking the browser; do not invent a menu path or use the browser on the user's behalf without an authorized site task.
 
 ## Verify outcomes
