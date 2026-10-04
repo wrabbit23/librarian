@@ -19,7 +19,7 @@ PLACEHOLDER_PATTERNS = (
     "YOUR_SKILL",
 )
 AUX_DOCS = {"README.md", "INSTALLATION_GUIDE.md", "QUICK_REFERENCE.md", "CHANGELOG.md"}
-ALLOWED_TOP_LEVEL = {"SKILL.md", "agents", "references", "scripts", "assets"}
+ALLOWED_TOP_LEVEL = {"SKILL.md", "agents", "references", "scripts", "assets", "data"}
 IGNORED_NAMES = {".DS_Store", "Thumbs.db", "__pycache__"}
 
 
