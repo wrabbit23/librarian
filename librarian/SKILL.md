@@ -1,6 +1,6 @@
 ---
 name: librarian
-description: Create, find, load, and maintain personal skills; capture lasting corrections and preferences in the appropriate skill. Use when asked for Librarian, skill creation or discovery, URL or catalog skill loading, or saving feedback into a named skill. Do not interrupt unrelated tasks merely to suggest saving preferences.
+description: Create, find, load, install, update, save, publish, uninstall, and maintain personal skills; capture lasting corrections and preferences in the appropriate skill. Use for Librarian and for any personal-skill discovery, creation, loading, installation, editing, persistence, lifecycle, or feedback request. Do not interrupt unrelated tasks merely to suggest saving preferences.
 ---
 
 # Librarian
@@ -11,12 +11,16 @@ Manage reusable knowledge through separate, small skills. Preserve the distincti
 
 At the first Librarian activation in each conversation, automatically read [references/updates.md](references/updates.md) and check the configured upstream release. Check again only when explicitly requested. This is an instruction executed when the skill is loaded, not a background service or a guarantee that the host will activate Librarian at chat startup. Continue the user's task if the check cannot complete.
 
+## Lifecycle invariant
+
+Once Librarian is active for a personal-skill management request, keep that request inside Librarian's workflow. Read the relevant linked reference before acting and follow it through the requested lifecycle stage. Do not bypass Librarian with a generic ZIP-only workflow, an unrelated skill creator, direct upstream repository edits, or a generic skill-list capability check. A ZIP is an export or manual fallback, not evidence of installation. For changes to Librarian itself, read [references/updates.md](references/updates.md) and complete its release workflow before reporting a published release.
+
 ## Route the request
 
-- For discovery, catalog browsing, or loading a URL, read [references/skill-loading.md](references/skill-loading.md).
-- For corrections, retrospective learning, or remembering a preference in another skill, read [references/feedback.md](references/feedback.md).
-- For any request to create a new personal skill, use Librarian's authoring and personal-skill lifecycle directly. Do not fall back to a generic ZIP-only, artifact-template, or unrelated skill-creation workflow unless the user explicitly asks for that output or capability.
-- For revision of an existing personal skill, use the same Librarian lifecycle. Offer the Librarian feedback hook for skills intended to evolve through use.
+- For discovery, catalog browsing, URL loading, import, installation, or forking, read [references/skill-loading.md](references/skill-loading.md) and [references/personal-skill-lifecycle.md](references/personal-skill-lifecycle.md) when persistence is involved.
+- For corrections, retrospective learning, or remembering a preference in another skill, read [references/feedback.md](references/feedback.md) and use the lifecycle reference before persistence.
+- For any request to create or revise a personal skill, use Librarian's authoring workflow and read [references/personal-skill-lifecycle.md](references/personal-skill-lifecycle.md) before deciding how edits are staged, installed, or saved. Do not fall back to a generic ZIP-only, artifact-template, or unrelated skill-creation workflow unless the user explicitly asks for that output or capability.
+- For requests to save, publish, install, uninstall, delete, or otherwise change persistence state, use [references/personal-skill-lifecycle.md](references/personal-skill-lifecycle.md). For Librarian's own upstream release, use [references/updates.md](references/updates.md) instead of treating a source commit as a completed release.
 - Keep domain work in the managed skill; Librarian handles discovery, organization, and maintenance. Do not claim automatic background monitoring or guaranteed dependency activation.
 
 ## Core workflow
@@ -39,7 +43,7 @@ At the first Librarian activation in each conversation, automatically read [refe
 
 ## Personal skills in ChatGPT
 
-Read [references/personal-skill-lifecycle.md](references/personal-skill-lifecycle.md) before creating, saving, updating, installing, uninstalling, or deleting a personal skill in a managed environment. Use the available skill-management skill for current routing and persistence requirements. Direct installation may be supported; do not assume a ZIP is the only delivery option.
+Read [references/personal-skill-lifecycle.md](references/personal-skill-lifecycle.md) before creating, saving, updating, installing, uninstalling, or deleting a personal skill in a managed environment. Follow the environment's current personal-skill management capability and verify the result. Do not infer that management is unavailable merely because a generic skill listing omits personal skills. Direct installation may be supported; do not assume a ZIP is the only delivery option.
 
 ## Start a new skill
 
