@@ -1,8 +1,8 @@
 {
   "name": "librarian",
-  "version": "0.1.1",
-  "commit": "8df9dff8442b574689c5c459136ff2426e2ab1e5",
+  "version": "0.1.2",
+  "commit": "7b4dbd85d3026260993c59390fd9bb0de413a0dd",
   "skill_path": "librarian",
-  "archive_path": "downloads/librarian-v0.1.1.zip",
-  "archive_sha256": "eac197091a7a536ac75e9861e469d0aaca61a397c68ebfbcf46dcfc5e4128c20"
+  "archive_path": "downloads/librarian-v0.1.2.zip",
+  "archive_sha256": "f7f58b582e99372cb7d1552c1ccf23e2ecb88f10b8bd81bf4410861fd9ce4325"
 }
