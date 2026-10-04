@@ -27,12 +27,14 @@ At the first Librarian activation in each conversation, automatically read [refe
    - `references/`: documentation or domain knowledge the agent should read only when relevant.
    - `scripts/`: repeatable or deterministic operations worth executing instead of rewriting.
    - `assets/`: templates, boilerplate, images, sample artifacts, or other files meant to be copied or used in outputs rather than read as instructions.
+   - `data/`: optional user- or project-specific state that should travel with a personal skill, such as progress logs, backlogs, inventories, or other evolving records. Prefer this over unrelated Library files when the data belongs to the skill.
    - `agents/`: optional platform-specific metadata. Add only when useful and supported by the target platform.
 4. Prefer existing relevant installed skills over duplicating their guidance. If a Markdown, style, document, spreadsheet, presentation, coding, or domain skill already covers part of the task, reference/use it rather than copying its rules into the new skill.
 5. Keep `SKILL.md` lean. Move detailed background, long examples, schemas, and variant-specific guidance to directly linked files under `references/`.
 6. Use explicit, portable script invocation such as `python3 <skill-root>/scripts/tool.py ...`. Do not rely on executable bits or the caller's working directory.
 7. Run every new or modified helper script on a representative input when practical.
-8. Validate the completed skill, fix all errors, and review warnings. Save through the environment's personal-skill workflow when available; export a ZIP only when requested.
+8. For personal skills that evolve through use, prefer a local-first edit cycle: apply requested changes to the skill's working copy immediately, keep evolving skill-owned state inside the skill (typically under `data/`), and do not persist/publish the accumulated changes until the user explicitly says `save`, `publish`, or otherwise clearly requests persistence.
+9. When persistence is requested, validate the completed skill, fix all errors, review warnings, and save through the environment's personal-skill workflow when available. Export a ZIP only when requested.
 
 ## Personal skills in ChatGPT
 
@@ -75,7 +77,7 @@ The packager validates first and writes a deterministic ZIP with one top-level f
 
 ## Editing an existing skill
 
-Preserve the user's existing design unless it causes a concrete problem. Make narrow changes, re-run affected scripts, validate, and save through the supported lifecycle. Repackage only for a requested export. Do not add infrastructure merely because this creator supports it.
+Preserve the user's existing design unless it causes a concrete problem. Make narrow changes in the working copy and re-run affected scripts as needed. For personal skills that use the local-first model, accumulate those edits locally and persist them only when the user explicitly requests a save or publish. When persistence is requested, validate and save through the supported lifecycle. Repackage only for a requested export. Do not add infrastructure merely because this creator supports it.
 
 ## Authoring rules
 
