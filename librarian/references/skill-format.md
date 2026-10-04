@@ -23,7 +23,8 @@ skill-name/
 │   └── openai.yaml
 ├── references/              # optional, read as needed
 ├── scripts/                 # optional, executable helpers
-└── assets/                  # optional, output resources/templates
+├── assets/                  # optional, output resources/templates
+└── data/                    # optional, evolving skill-owned user/project state
 ```
 
 Do not create empty directories just to match the diagram. Include only what the skill uses.
@@ -81,6 +82,10 @@ This is more portable than assuming the file is executable or that the caller's 
 ### assets/
 
 Put files here when they are inputs/resources for the output rather than instructions to be read into context: templates, boilerplate projects, images, sample artifacts, icons, fonts, and similar material.
+
+### data/
+
+Use `data/` for evolving user- or project-specific state that belongs to the skill itself, such as a backlog, progress log, inventory, or small structured dataset. Keep this separate from procedural instructions and from unrelated Library files. Do not use it for secrets, caches, conversation transcripts, or generated archives.
 
 ### agents/
 
