@@ -2,7 +2,7 @@
 
 ## Local release
 
-- Version: 0.1.2
+- Version: 0.1.3
 - Upstream repository: https://github.com/wrabbit23/librarian
 - Release descriptor: https://raw.githubusercontent.com/wrabbit23/librarian/main/release.json
 - Skill directory in upstream: librarian/
