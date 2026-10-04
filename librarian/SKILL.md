@@ -15,7 +15,8 @@ At the first Librarian activation in each conversation, automatically read [refe
 
 - For discovery, catalog browsing, or loading a URL, read [references/skill-loading.md](references/skill-loading.md).
 - For corrections, retrospective learning, or remembering a preference in another skill, read [references/feedback.md](references/feedback.md).
-- For creation or revision, follow the authoring workflow below. Offer the Librarian feedback hook for skills intended to evolve through use.
+- For any request to create a new personal skill, use Librarian's authoring and personal-skill lifecycle directly. Do not fall back to a generic ZIP-only, artifact-template, or unrelated skill-creation workflow unless the user explicitly asks for that output or capability.
+- For revision of an existing personal skill, use the same Librarian lifecycle. Offer the Librarian feedback hook for skills intended to evolve through use.
 - Keep domain work in the managed skill; Librarian handles discovery, organization, and maintenance. Do not claim automatic background monitoring or guaranteed dependency activation.
 
 ## Core workflow
