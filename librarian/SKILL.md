@@ -7,9 +7,9 @@ description: Create, find, load, install, update, save, publish, uninstall, and 
 
 Manage reusable knowledge through separate, small skills. Preserve the distinction between using instructions in this conversation and installing or updating a saved personal skill.
 
-## Startup update check
+## Update checks
 
-At the first Librarian activation in each conversation, automatically read [references/updates.md](references/updates.md) and check the configured upstream release. Check again only when explicitly requested. This is an instruction executed when the skill is loaded, not a background service or a guarantee that the host will activate Librarian at chat startup. Continue the user's task if the check cannot complete.
+Do not check for updates automatically. On the first Librarian activation in each conversation, unless the user has already requested an update check or update, briefly say: “I haven’t checked for Librarian updates. Ask me to check whenever you want.” Say this at most once per conversation and continue the user’s task without waiting for a response. When the user explicitly requests a check or update, read [references/updates.md](references/updates.md) and follow its workflow. If a check has already completed in this conversation, report its actual result instead of saying it has not been checked.
 
 ## Lifecycle invariant
 

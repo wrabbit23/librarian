@@ -2,14 +2,16 @@
 
 ## Local release
 
-- Version: 0.1.4
+- Version: 0.1.5
 - Upstream repository: https://github.com/wrabbit23/librarian
 - Release descriptor: https://raw.githubusercontent.com/wrabbit23/librarian/main/release.json
 - Skill directory in upstream: librarian/
 
-## Automatic startup check
+## User-requested update check
 
-On first activation in a conversation, prefer the bundled anonymous curl checker when command execution, Python 3, curl, and outbound HTTPS are available:
+Do not run this check automatically on activation. Check only when the user explicitly requests a Librarian update check or update. The startup notice is defined in SKILL.md; it does not authorize network access.
+
+For an explicitly requested check, prefer the bundled anonymous curl checker when command execution, Python 3, curl, and outbound HTTPS are available:
 
 ```bash
 python3 <skill-root>/scripts/check_update.py
